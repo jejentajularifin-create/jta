@@ -161,3 +161,21 @@ footer{
     padding:25px;
     color:var(--navy);
 }
+.menu-tugas {
+    display: flex;
+    gap: 20px;
+}
+.cta-button {
+    /* Gaya Visual */
+    background-color: #e74c3c; /* Warna Merah Kontras */
+    color: white;
+    font-weight: bold;
+    
+    /* Ukuran dan Bentuk */
+    padding: 8px 15px; /* Jarak di dalam tombol */
+    border-radius: 5px; /* Sudut membulat */
+    
+    /* Efek Hover */
+    transition: background-color 0.3s ease;
+}
+
