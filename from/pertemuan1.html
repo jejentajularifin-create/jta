@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum CSS Lengkap - Rainbow Edition</title>
+    <link rel="stylesheet" href="pertemuan1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS Example */
+        body {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan ID Selector -->
+    <h1 id="main-title" style="color: var(--rainbow-purple);">🎨 Praktikum CSS Lengkap</h1>
+    
+    <!-- Demonstrasi Box Model -->
+    <div class="box">Kotak A - Box Model</div>
+    <div class="box">Kotak B - Box Model</div>
+    
+    <!-- Demonstrasi Display -->
+    <div class="inline-box">Inline-Block 1</div>
+    <div class="inline-box">Inline-Block 2</div>
+    
+    <!-- Navigasi -->
+    <ul class="nav-menu">
+        <li><a href="#">🏠 Beranda</a></li>
+        <li><a href="#">📦 Produk</a></li>
+        <li><a href="#">📞 Kontak</a></li>
+    </ul>
+    
+    <!-- Pseudo-class Demo -->
+    <div class="interaktif-box">🎯 Arahkan Kursor Ke Sini!</div>
+    
+    <div class="link-container">
+        <a href="https://example.com/new" class="nav-link">🔗 Link Baru (Unvisited)</a>
+        <a href="#" class="nav-link">🔗 Link Lama (Visited)</a>
+    </div>
+    
+    <!-- Tombol CTA -->
+    <button class="cta-button">🚀 Pesan Sekarang!</button>
+    
+    <!-- Form -->
+    <div class="form-container">
+        <h2 class="text-center">📝 Form Pendaftaran</h2>
+        <form>
+            <div class="form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-input" placeholder="Masukkan nama Anda">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Jenis Kelamin</label>
+                <label class="custom-radio">
+                    <input type="radio" name="gender"> Laki-laki
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="gender"> Perempuan
+                </label>
+            </div>
+            
+            <button class="cta-button" type="submit">📨 Daftar</button>
+        </form>
+    </div>
+    
+    <!-- Kartu Produk -->
+    <div class="product-card">
+        <h2>💻 Laptop Gaming Terbaru</h2>
+        <p>Performa luar biasa untuk gaming dan multitasking.</p>
+        <p class="price" id="diskon">Rp 15.000.000</p>
+    </div>
+    
+    <!-- Cascade Demo -->
+    <div id="cascade-demo" style="color: var(--rainbow-orange);">
+        🎭 Demo Cascade: Inline style (orange) menimpa external (green)
+    </div>
+    
+    <div class="important-demo" style="color: var(--rainbow-blue);">
+        ⚡ !important menimpa semua (warna merah)
+    </div>
+    
+    <!-- Highlight dengan Class Selector -->
+    <p class="highlight mt-3">✨ Paragraf ini menggunakan class selector .highlight</p>
+</body>
+</html>

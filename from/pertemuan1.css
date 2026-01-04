@@ -1,0 +1,665 @@
+/* ============================================ */
+/* CSS UNIFIED - GABUNGAN SEMUA PRAKTIKUM       */
+/* Dari Dasar sampai Advanced dengan Rainbow Theme */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. RESET & VARIABLES GLOBAL - RAINBOW EDITION */
+/* ============================================ */
+
+:root {
+  /* 🌈 PALETTE WARNA CERAH & UNIK */
+  --rainbow-red: #FF6B6B;
+  --rainbow-orange: #FFA726;
+  --rainbow-yellow: #FFD93D;
+  --rainbow-green: #6BCF7F;
+  --rainbow-teal: #4ECDC4;
+  --rainbow-blue: #4D96FF;
+  --rainbow-purple: #9C6BFF;
+  --rainbow-pink: #FF6BC6;
+  
+  /* 🎨 Gradients Colorful */
+  --gradient-sunset: linear-gradient(135deg, 
+    var(--rainbow-red) 0%, 
+    var(--rainbow-orange) 25%, 
+    var(--rainbow-yellow) 50%, 
+    var(--rainbow-green) 75%, 
+    var(--rainbow-teal) 100%
+  );
+  --gradient-ocean: linear-gradient(135deg, 
+    var(--rainbow-teal) 0%, 
+    var(--rainbow-blue) 50%, 
+    var(--rainbow-purple) 100%
+  );
+  --gradient-rainbow: linear-gradient(90deg, 
+    var(--rainbow-red) 0%, 
+    var(--rainbow-orange) 16%, 
+    var(--rainbow-yellow) 32%, 
+    var(--rainbow-green) 48%, 
+    var(--rainbow-teal) 64%, 
+    var(--rainbow-blue) 80%, 
+    var(--rainbow-purple) 96%
+  );
+  
+  /* ✨ Animations */
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 📏 Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* 🔲 Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  
+  /* 🌫️ Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+  --shadow-rainbow: 0 4px 20px rgba(255, 107, 107, 0.2),
+                   0 8px 30px rgba(255, 167, 38, 0.2),
+                   0 12px 40px rgba(77, 150, 255, 0.2);
+}
+
+/* ============================================ */
+/* 2. RESET DASAR & BOX MODEL */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* WAJIB untuk Box Model yang intuitif */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, 
+    rgba(255, 107, 107, 0.1) 0%, 
+    rgba(255, 167, 38, 0.1) 20%, 
+    rgba(255, 217, 61, 0.1) 40%, 
+    rgba(107, 207, 127, 0.1) 60%, 
+    rgba(78, 205, 196, 0.1) 80%, 
+    rgba(156, 107, 255, 0.1) 100%
+  );
+  min-height: 100vh;
+  padding: var(--space-lg);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* 3. DEMONSTRASI METODE CSS: INLINE, INTERNAL, EXTERNAL */
+/* ============================================ */
+
+/* 🔵 External CSS - Contoh Selector Element */
+h1 {
+  color: var(--rainbow-red);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-rainbow);
+  border-radius: 2px;
+}
+
+/* 🟣 Contoh Class Selector */
+.highlight {
+  background-color: var(--rainbow-yellow);
+  color: #333;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 🟢 Contoh ID Selector (unik per halaman) */
+#main-title {
+  border-bottom: 3px solid var(--rainbow-blue);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  animation: rainbowBorder 3s infinite linear;
+}
+
+@keyframes rainbowBorder {
+  0% { border-image: var(--gradient-rainbow) 1; }
+  100% { border-image: var(--gradient-rainbow) 1; }
+}
+
+/* ============================================ */
+/* 4. STYLING TEKS & FONT */
+/* ============================================ */
+
+/* Font dasar untuk seluruh halaman */
+body {
+  font-family: 'Poppins', Arial, sans-serif; /* Fallback font */
+}
+
+/* Properti teks untuk paragraf */
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+  transition: color 0.3s ease;
+}
+
+p:hover {
+  color: var(--rainbow-purple);
+}
+
+/* Text alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Font weight dan style */
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Text decoration untuk link */
+a {
+  text-decoration: none;
+  color: var(--rainbow-blue);
+  transition: all 0.3s var(--animation-bounce);
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rainbow-blue);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* ============================================ */
+/* 5. BOX MODEL DEMONSTRASI */
+/* ============================================ */
+
+/* Kotak-kotak untuk demonstrasi Box Model */
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: var(--rainbow-teal);
+  border: 5px solid var(--rainbow-blue);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: var(--shadow-md);
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Demonstrasi display property */
+.inline-box {
+  display: inline-block;
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  background: var(--gradient-ocean);
+  color: white;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all 0.3s var(--animation-bounce);
+}
+
+.inline-box:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* ============================================ */
+/* 6. NAVIGASI - APLIKASI BOX MODEL & DISPLAY */
+/* ============================================ */
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  flex-wrap: wrap;
+}
+
+.nav-menu li {
+  display: inline-block;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 12px 24px;
+  margin-right: 5px;
+  background: var(--gradient-rainbow);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.4s var(--animation-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-menu li a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu li a:active {
+  transform: translateY(0);
+}
+
+/* ============================================ */
+/* 7. PSEUDO-CLASS STYLING (LVHA ORDER) */
+/* ============================================ */
+
+/* 🎯 Urutan LVHA WAJIB: Link → Visited → Hover → Active */
+
+/* :link - Link belum dikunjungi */
+.nav-link:link {
+  color: var(--rainbow-blue);
+  background: rgba(77, 150, 255, 0.1);
+}
+
+/* :visited - Link sudah dikunjungi */
+.nav-link:visited {
+  color: var(--rainbow-purple);
+  background: rgba(156, 107, 255, 0.1);
+}
+
+/* :hover - Saat kursor di atas */
+.nav-link:hover {
+  background-color: var(--rainbow-yellow);
+  color: #333;
+  transform: scale(1.05);
+}
+
+/* :active - Saat diklik */
+.nav-link:active {
+  color: var(--rainbow-red);
+  transform: scale(0.95);
+}
+
+/* Pseudo-class untuk elemen non-link */
+.interaktif-box {
+  padding: var(--space-lg);
+  border: 3px solid var(--rainbow-green);
+  background-color: rgba(107, 207, 127, 0.1);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.4s var(--animation-elastic);
+  margin: var(--space-md) 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.interaktif-box:hover {
+  border-color: var(--rainbow-pink);
+  background-color: rgba(255, 107, 198, 0.1);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.interaktif-box:active {
+  transform: translateY(0);
+  background-color: rgba(255, 107, 198, 0.2);
+}
+
+/* ============================================ */
+/* 8. TOMBOL CTA INTERAKTIF */
+/* ============================================ */
+
+.cta-button {
+  background: var(--gradient-rainbow);
+  color: white;
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s var(--animation-bounce);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
+  margin: var(--space-md);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-button:active {
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(90deg, 
+    var(--rainbow-red) 0%, 
+    var(--rainbow-orange) 16%, 
+    var(--rainbow-yellow) 32%, 
+    var(--rainbow-green) 48%, 
+    var(--rainbow-teal) 64%, 
+    var(--rainbow-blue) 80%, 
+    var(--rainbow-purple) 96%
+  );
+}
+
+/* ============================================ */
+/* 9. FORM STYLING (dari materi form) */
+/* ============================================ */
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  max-width: 600px;
+  margin: var(--space-xl) auto;
+  box-shadow: var(--shadow-rainbow);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  animation: rainbowBorder 8s infinite linear;
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+  color: var(--rainbow-purple);
+  font-size: 1.1rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--rainbow-teal);
+  border-radius: var(--radius-md);
+  color: #333;
+  transition: all 0.3s var(--animation-bounce);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--rainbow-pink);
+  box-shadow: 0 0 0 3px rgba(255, 107, 198, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Radio & Checkbox Modern */
+.custom-radio,
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  margin-right: var(--space-md);
+  margin-bottom: var(--space-xs);
+  cursor: pointer;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.custom-radio:hover,
+.custom-checkbox:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+}
+
+/* ============================================ */
+/* 10. STUDI KASUS: KARTU PRODUK */
+/* ============================================ */
+
+.product-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-md) 0;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s var(--animation-bounce);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--gradient-rainbow);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--rainbow-blue);
+}
+
+.product-card h2 {
+  color: var(--rainbow-blue);
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+}
+
+.price {
+  color: var(--rainbow-red);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: var(--space-sm);
+}
+
+#diskon {
+  color: var(--rainbow-green);
+  text-decoration: underline;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ============================================ */
+/* 11. RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .nav-menu li a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .form-container {
+    padding: var(--space-md);
+    margin: var(--space-md);
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 2rem;
+    --space-lg: 1.5rem;
+  }
+  
+  body {
+    padding: var(--space-sm);
+  }
+  
+  .cta-button {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 1rem;
+  }
+  
+  .box {
+    width: 100%;
+    margin-bottom: var(--space-md);
+  }
+}
+
+/* ============================================ */
+/* 12. UTILITY CLASSES */
+/* ============================================ */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+.mt-3 { margin-top: var(--space-lg); }
+
+.mb-1 { margin-bottom: var(--space-sm); }
+.mb-2 { margin-bottom: var(--space-md); }
+.mb-3 { margin-bottom: var(--space-lg); }
+
+.p-1 { padding: var(--space-sm); }
+.p-2 { padding: var(--space-md); }
+.p-3 { padding: var(--space-lg); }
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+
+/* ============================================ */
+/* 13. DARK MODE SUPPORT */
+/* ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(45deg, #1a1a2e 0%, #16213e 100%);
+    color: #f0f0f0;
+  }
+  
+  .form-container,
+  .product-card {
+    background: #222831;
+    color: #f0f0f0;
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background: #2d4059;
+    color: #f0f0f0;
+    border-color: var(--rainbow-blue);
+  }
+}
+
+/* ============================================ */
+/* 14. DEMONSTRASI CASCADE & PRIORITAS */
+/* ============================================ */
+
+/* Contoh Cascade (akan ditimpa oleh inline style) */
+#cascade-demo {
+  color: var(--rainbow-green);
+  font-size: 1.2rem;
+  padding: var(--space-md);
+  background: rgba(107, 207, 127, 0.1);
+  border-radius: var(--radius-md);
+  margin: var(--space-lg) 0;
+}
+
+/* Important (harus dihindari, hanya untuk demo) */
+.important-demo {
+  color: var(--rainbow-red) !important;
+  font-weight: bold;
+  border: 3px dashed var(--rainbow-red);
+  padding: var(--space-sm);
+}
