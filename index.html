@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jejen | Man City Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
     <!-- HEADER -->
-    <header>
+    <header class="hero">
         <nav>
             <h1 class="logo">JEJEN  MCFC</h1>
             <ul>
@@ -20,18 +20,18 @@
                 <li><a href="#projects">Proyek</a></li>
                 <li><a href="#contact">Kontak</a></li>
                 <li><a href="css.html">CssBlue</a></li>
-                <li><a href="lat_css.html">Png tugas</a></li>
             </ul>
 
         </nav>
 
         <div class="hero-content">
-            <img src="image/download.png" class="profil-img" alt="Foto Profil">
+            <img src="/image/download.png" class="profil-img" alt="Foto Profil">
             <h2 class="animate-text">Jejen Tajul Arifim</h2>
             <p class="animate-text">Forever Manchester Is Blue • Pride in Battle </p>
             <a href="#contact" class="btn animate-btn">Hubungi Saya</a>
         </div>
     </header>
+    
 
 
     <!-- TENTANG SAYA -->
@@ -40,6 +40,16 @@
         <p>Saya adalah mahasiswa Universitas Mayasari Bakti dari Fakultas Teknik Prodi Teknik Informatika. 
         Saya juga fans Manchester City sejak era Bapaknya Haland Membela Manchester City, dan sangat mengagumi filosofi tiki-taka & positional play ala Pep Guardiola.</p>
     </section>
+    
+
+        <div class="dropdown">
+        <button class="dropbtn" id="toggleDropdown">Kumpulan Tugas ▾</button>
+        <div class="dropdown-content" id="dropdownMenu">
+        <a href="form/pertemuan1.html">🏢 Praktikum Pertemuan 10</a>
+        <a href="form/pertemuan2.html">🏢 Praktikum Pertemuan 11</a>
+        <a href="form/pertemuan3.html">🏢 Praktikum Pertemuan 12</a>
+    </div>
+</div>
 
 
     <!-- SKILL -->
@@ -121,13 +131,21 @@
         <p>💙 Manchester City Till I Die 💙</p>
         <p>&copy; 2025 Jejen Tajul Arifin</p>
     </footer>
+    
+    <script>
+const toggleBtn = document.getElementById("toggleDropdown");
+const dropdown = document.getElementById("dropdownMenu");
+
+toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+});
+
+document.addEventListener("click", function () {
+    dropdown.classList.remove("show");
+});
+</script>
+
 
 </body>
 </html>
-
-
-
-
-
-
-
