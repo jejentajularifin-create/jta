@@ -161,21 +161,77 @@ footer{
     padding:25px;
     color:var(--navy);
 }
-.menu-tugas {
-    display: flex;
-    gap: 20px;
-}
-.cta-button {
-    /* Gaya Visual */
-    background-color: #e74c3c; /* Warna Merah Kontras */
-    color: white;
-    font-weight: bold;
-    
-    /* Ukuran dan Bentuk */
-    padding: 8px 15px; /* Jarak di dalam tombol */
-    border-radius: 5px; /* Sudut membulat */
-    
-    /* Efek Hover */
-    transition: background-color 0.3s ease;
+/* Penataan Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Tombol Utama - Style City Metropolitan */
+.dropbtn {
+    background-color: #232346; /* Biru gelap malam */
+    color: #00d2ff; /* Warna neon cyan */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #00d2ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* Efek Hover Tombol - Seperti Lampu Neon Menyala */
+.dropbtn:hover {
+    background-color: #00d2ff;
+    color: #1a1a2e;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+}
+
+/* Menu Dropdown - Efek Glassmorphism (Kaca) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(26, 26, 46, 0.95); /* Semi transparan */
+    backdrop-filter: blur(10px); /* Efek blur kaca */
+    min-width: 220px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    overflow: hidden;
+    animation: slideDown 0.4s ease;
+}
+
+/* Link di dalam Dropdown */
+.dropdown-content a {
+    color: #ffffff;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(1, 18, 73);
+    transition: background 0.3s;
+}
+
+/* Hover pada Link - Aksen gedung malam */
+.dropdown-content a:hover {
+    background-color: rgba(12, 0, 106, 0.997);
+    color: #00d2ff;
+    padding-left: 25px; /* Efek geser sedikit */
+}
+
+/* Class untuk memunculkan dropdown via JS */
+.show {
+    display: block !important;
+}
+
+/* Animasi Muncul */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
